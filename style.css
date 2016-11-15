@@ -21,7 +21,7 @@
 #menu, #content{
 	overflow: hidden;
 	width: 800px;
-	background-color: lightgreen;
+	background-color: grey;
 	margin: 10px auto;
 }
 
