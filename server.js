@@ -24,6 +24,34 @@ fs.writeFileSync('data.json',str)
 res.send("Дані збережено на сервер")
 });
 
+app.get("/delete",function(req,res){  
+ var file = require('./data.json');
+ file.splice(req.query.id,1);
+var str = JSON.stringify(file);
+fs.writeFileSync('data.json',str);
+	
+   res.send("Елемент видалено");
+});
+	 
+	   //console.log(file);
+	 
+	 // 
+	// var str="";
+	 // fs.readFile('data.json',str)
+	 //  console.log(str);
+	   //file = JSON.parse(file);
+	   //
+	  // var str = JSON.stringify(file);
+	   //
+	
+	   // 
+		/*
+
+	/* 
+	
+	*/
+	
+
 
 app.listen(8080);
 console.log("Server is running");
