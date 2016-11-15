@@ -64,6 +64,7 @@ function ParseJson(file,cont){
 		mas.push(key);
 		mas.push("");
 var table = document.createElement("table")
+table.setAttribute("id","mytable")
 	cont.appendChild(table);
 var tr = document.createElement("tr");
 table.appendChild(tr);
@@ -128,26 +129,31 @@ function GetSend(){
 }
 
 function DelClick(){
-	var parent = this.parentNode.parentNode;
-	var id = parent.rowIndex-1;
-	console.log(id);
-	var xhr = new XMLHttpRequest;
+	var tr = this.parentNode.parentNode;
+	var id = tr.rowIndex-1;
+
+	var xhr = new XMLHttpRequest();
 	xhr.open("GET","/delete?"+id,true);
 		xhr.send();
 			
 		xhr.onreadystatechange = function(){
-			if(xhr.readyState == 4){
-				for(var i = 0; i<inputs.length; i++)
-					inputs[i].value="";
-				alert(xhr.responseText);
+			if(xhr.readyState == 4){ 
+
+				table = document.getElementById("mytable")
+				  table.deleteRow(tr.rowIndex);
+				  alert(xhr.responseText);
+				 
 			}
-		}
+				
+				
+			
+					}
 	
 }
 
 	//file.splice(req.query.id,1)
 
-}
+
 </script>
 <link rel="stylesheet" type="text/css" href="style.css">
 	<title></title>
