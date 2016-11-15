@@ -1,0 +1,29 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vovakhmil/ajaxform.git"
+  },
+  "keywords": [
+    "ajax",
+    "form",
+    "javascript"
+  ],
+  "author": "Khmil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vovakhmil/ajaxform/issues"
+  },
+  "homepage": "https://github.com/vovakhmil/ajaxform",
+  "devDependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  }
+}

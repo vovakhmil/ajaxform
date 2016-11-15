@@ -2,6 +2,9 @@
 var express = require("express");
 var app = express();
 var fs = require('fs');
+var bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
 app.use(express.static(__dirname)) // вСТАНОВЛЕННЯ каталогу для статичного контенту
 
 app.get("/",function(req,res){
